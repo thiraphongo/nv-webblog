@@ -9,6 +9,8 @@
   "author": "Suthinee Thuatong",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^5.0.0-0",
+    "sqlite3": "^5.0.0"
   }
 }
