@@ -2,7 +2,7 @@ const UserController = require('./controllers/UserController')
 const UserAuthenController = require('./controllers/UserAuthenController')
 const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController')
-
+const CommentController = require('./controllers/CommentController')
 
 module.exports = (app) => {
     /* RESFUL Api for users management */
@@ -52,6 +52,28 @@ module.exports = (app) => {
     app.get('/blogs',
     BlogController.index
     )
+
+    // comment route
+// create comment
+app.post('/comment',
+CommentController.create
+)
+// edit comment, suspend, active
+app.put('/comment/:commentId',
+CommentController.put
+)
+// delete comment
+app.delete('/comment/:commentId',
+CommentController.remove
+)
+// get comment by id
+app.get('/comment/:commentId',
+CommentController.show
+)
+// get all comment
+app.get('/comments',
+CommentController.index
+)
 
 
     }
