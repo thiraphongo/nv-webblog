@@ -1,7 +1,7 @@
 <template>
 <div>
 <h2>Get all blogs</h2>
-<p><button v-on:click="logout">Logout</button></p>
+
 <h4>จำนวน blog {{blogs.length}}</h4>
 <p><button v-on:click="navigateTo('/blog/create')">สร้าง
 blog</button></p>
@@ -16,7 +16,7 @@ blog</button></p>
 blog</button>
 <button v-on:click="navigateTo('/blog/edit/'+ blog.id)">แก้ไข
 blog</button>
-<button v-on:click="deleteBlog(blog)">ลบขอ้ มูล</button>
+<button v-on:click="deleteBlog(blog)">ลบข้อมูล</button>
 </p>
 <hr>
 </div>
@@ -34,13 +34,7 @@ async created () {
 this.blogs = (await BlogsService.index()).data
 },
 methods: {
-logout () {
-this.$store.dispatch('setToken', null)
-this.$store.dispatch('setBlog', null)
-this.$router.push({
-name: 'login'
-})
-},
+
 navigateTo (route) {
 this.$router.push(route)
 },
