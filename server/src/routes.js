@@ -3,6 +3,7 @@ const UserAuthenController = require('./controllers/UserAuthenController')
 const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController')
 
+
 module.exports = (app) => {
     /* RESFUL Api for users management */
     // create user
@@ -51,4 +52,6 @@ module.exports = (app) => {
     app.get('/blogs',
     BlogController.index
     )
+
+
     }
