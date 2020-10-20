@@ -17,11 +17,11 @@ data-target="#navcol-1">
 </div>
 <div class="collapse navbar-collapse" id="navcol-1">
 <ul class="nav navbar-nav navbar-right">
-<li role="presentation"><a href="#">Blogs</a></li>
-<li role="presentation"><a href="#">Users</a></li>
-<li role="presentation"><a href="#">Comments</a></li>
-<li role="presentation"><a href="#">Login</a></li>
-<li role="presentation"><a href="#">Logout</a></li>
+<li role="presentation"><router-link :to="{name: 'blogs'}" >Blogs</router-link></li>
+<li role="presentation"><router-link :to="{name: 'users'}" >Users</router-link></li>
+<li role="presentation"><router-link :to="{name: 'comments'}" >comments</router-link></li>
+<li role="presentation"><router-link :to="{name: 'login'}" >Login</router-link></li>
+<li role="presentation"><router-link :to="{name: 'login'}" >Login</router-link></li>
 </ul>
 </div>
 </div>
@@ -29,17 +29,7 @@ data-target="#navcol-1">
 <br />
 <br />
 <br />
-<!-- old navbar -->
-<div class="nv-navbar">
-<ul class="nav">
-<li><router-link :to="{name: 'blogs'}" >Blogs</router-link></li>
-<li><router-link :to="{name: 'users'}" >Users</router-link></li>
-<li><router-link :to="{name: 'comments'}" >comments</router-link></li>
-<li><router-link :to="{name: 'login'}" >Login</router-link></li>
-<li><a href="#" v-on:click="logout">Logout</a></li>
-</ul>
-<div class="clearfix"></div>
-</div>
+
 
 </div>
 </template>

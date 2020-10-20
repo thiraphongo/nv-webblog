@@ -25,14 +25,13 @@
 <div>
 <ul class="pictures">
 <li v-for="picture in pictures" v-bind:key="picture.id">
-<img style="margin-bottom:5px;" :src="BASE_URL+picture.name"
-alt="picture image">
+<img style="margin-bottom:5px;" :src="BASE_URL+picture.name" alt="picture image">
 </li>
 </ul>
 <div class="clearfix"></div>
 </div>
 
-          <input type="file" multiple :name= "uploadFieldName" :disabled= "isSaving" @change= "filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
+          <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
             accept="image/*" class="input-file">
             <!-- <p v-if="isInitial || isSuccess"> -->
             <p v-if="isInitial">

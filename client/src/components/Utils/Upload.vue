@@ -4,7 +4,6 @@
 <h1>Upload Material:</h1>
 <form enctype="multipart/form-data" novalidate>
 <div class="dropbox">
-
 <input type="file" multiple :name="uploadFieldName"
 :disabled="isSaving" @change="filesChange($event.target.name,
 $event.target.files); fileCount = $event.target.files.length"

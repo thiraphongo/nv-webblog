@@ -1,7 +1,16 @@
 <template>
-<div> 
-    <div class="blog-header">
+<div>
+
+
+
+
+<div class="blog-header">
 <h2>ส่วนจัดการบล็อก</h2>
+<div>
+<form>
+<input type="text" v-model="search" placeholder="Search"> <br><br>
+</form>
+</div>
 <div>
 <button v-on:click="navigateTo('/blog/create')">create
 blog</button>
@@ -26,6 +35,7 @@ blog</button>
 <p><strong>Category:</strong> {{ blog.category }}</p>
 <p><strong>Create:</strong> {{ blog.createdAt }}</p>
 <!-- <p>status: {{ blog.status }}</p> -->
+
 <p>
 <button v-on:click="navigateTo('/blog/'+ blog.id)">ดู
 blog</button>
@@ -33,17 +43,33 @@ blog</button>
 blog</button>
 <button v-on:click="deleteBlog(blog)">ลบขอ้ มูล</button>
 </p>
+
+<p>
+<button class="btn btn-sm btn-info" v-on:click="navigateTo('/blog/'+
+blog.id)">ดู blog</button>
+<button class="btn btn-sm btn-warning" von:
+click="navigateTo('/blog/edit/'+ blog.id)">แก้ไข
+blog</button>
+<button class="btn btn-sm btn-danger" von:
+click="deleteBlog(blog)">ลบข้อมูล</button>
+</p>
+
+
+
 </div>
 <div class="clearfix"></div>
 </div>
+<div id="blog-list-bottom">Blog Bottom</div>
 </div>
 </template>
 <script>
 import BlogsService from '@/services/BlogsService'
 export default {
+    
 data () {
 return {
-blogs: []
+blogs: [],
+
 }
 },
 async created () {
@@ -72,9 +98,7 @@ this.blogs = (await BlogsService.index()).data
 }
 </script>
 <style scoped>
-.col1, .col2, .col3 {
-border:solid 1px red;
-}
+
 .empty-blog {
 width: 100%;
 text-align: center;
