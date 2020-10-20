@@ -9,8 +9,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors())
 
+
 require('./userPassport')
 require('./routes')(app)
+
+
 
 let port = process.env.PORT || config.port
 sequelize.sync({force: false}).then(() => {
@@ -54,3 +57,4 @@ app.delete('/user/:userId', function (req, res) {
     res.send('ทำการลบผู้ใช้งาน: ' + req.params.userId + ' : ' +
     JSON.stringify(req.body))
 })
+

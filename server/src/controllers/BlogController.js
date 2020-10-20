@@ -22,6 +22,7 @@ res.status(500).send({
 error: 'Create blog incorrect'
 })
 }
+
 },
 // edit blog, suspend, active
 async put (req, res) {

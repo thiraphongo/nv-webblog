@@ -21,6 +21,10 @@ import BlogShow from '@/components/Blogs/ShowBlog'
 
 Vue.use(Router)
 
+// Upload Testing
+import Upload from '@/components/Utils/Upload'
+
+
 export default new Router({
   routes: [
     {
@@ -75,7 +79,20 @@ export default new Router({
       path: '/comments',
      name: 'comments',
       component: CommentIndex
-    }]
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload
+      },
+      
+      // upload testing
+{
+  path: '/upload',
+  name: 'upload',
+  component: Upload
+  },
+      ]
   })
 
   
